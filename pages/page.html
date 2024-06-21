@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
+    <title>SecurChat | accueil</title>
+    <!-- Lien vers le fichier Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="../vendor/bootstrap-5.0.2/css/bootstrap.css" /> -->
+    <!-- <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" href="../vendor/bootstrap-5.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/load.css" />
+    <link rel="stylesheet" href="../css/page.css" />
+</head>
+
+<body>
+    <!-- Cette partie s'affiche pendant quelque seconde avant que le contenue de la page ne s'affiche -->
+    <div id="code" class="text-center hidden">
+        <div id="changeColorButton" class="bar-tm-dark"></div>
+        <!-- Code à afficher pendant 2 secondes -->
+        <div class="container text-center mt-5">
+            <div class="logo mt-4">
+                <img id="logo" src="../images/logo.png" alt="Logo" />
+            </div>
+            <h1 class="title mt-3">SecurChat</h1>
+        </div>
+        <h1 class="text-center fw-bold">Bienvenue</h1>
+        <div class="loader">
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <!-- Le cotenue de la page page.html -->
+    <div class="content" id="page">
+        <div class="col left-side" id="left-side">
+            <!-- Contenu de la partie gauche -->
+            <div class="sidebar" id="element">
+                <div class="container text-center">
+                    <div class="logo">
+                        <img src="../images/logo.png" alt="Logo" class="logo">
+                    </div>
+                    <h1 class="title" id="site-name">SecurChat</h1>
+                </div>
+                <i onclick="redimensionnerNav()" class="bg-dark p-3 d-flex"></i>
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item text-center">
+                        <a id="lienDiscussions" class="nav-link active" href="#discussions" onclick="rdirDiscussions()"
+                            data-tooltip="Discussions"><i class="fas fa-comments fa-lg"></i><span class="link-title">
+                                Discussions</span></a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a id="lienDiscussionsGroupe" class="nav-link" href="#discussions-de-groupe"
+                            onclick="rdirDiscussionsGroup()" data-tooltip="Discussions de Groupe"><i
+                                class="fas fa-users fa-lg"></i><span class="link-title"> Discussions de
+                                Groupe</span></a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a id="lienParametre" class="nav-link" href="#parametrage" onclick="rdirParametre()"
+                            data-tooltip="Paramétrage"><i class="fa fa-cog fa-lg"></i><span class="link-title">
+                                Paramétrage</span></a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a id="lienNouvelleDiscussions" class="nav-link" href="#nouvelle-discussions"
+                            onclick="rdirNouvelleDiscussions()" data-tooltip="Nouvelle Discussions"><i
+                                class="fas fa-plus fa-lg"></i><span class="link-title"> Nouvelle Discussions</span></a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a id="lienInformation" class="nav-link" href="#information" onclick="rdirInformation()"
+                            data-tooltip="Information"><i class="fa fa-info-circle fa-lg fa-center"></i><span
+                                class="link-title">Information</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link not-active" href="#">À Propos de Nous</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link not-active" href="#">Nous Contacter</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link not-active">&copy; 2024</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col right-side">
+            <div class="bg-dark-p p-1 top-fixed" id="toprightside">
+                <h2 class="text-center" id="title-page">Discussions</h2>
+            </div>
+            <div class="content mt-5" id="mainContent">
+
+            </div>
+        </div>
+
+</body>
+<script>
+    $('#mainContent').remove();
+    $(document).ready(function () {
+        $("#lienDiscussions").click(function () {
+            $("#mainContent").load("discussions.html #contentDiscussions");
+        });
+        $("#lienDiscussionsGroupe").click(function () {
+            $("#mainContent").load("discussions-groupe.html #contentDiscussionsGroupe");
+        });
+
+        $("#lienParametre").click(function () {
+            $("#mainContent").load("parametrage.html #contentParametrage");
+        });
+
+        $("#lienNouvelleDiscussions").click(function () {
+            $("#mainContent").load("nouvelle-discussions.html #contentNouvelleDiscussions");
+        });
+
+        $("#lienInformation").click(function () {
+            $("#mainContent").load("information.html #contentInformation");
+        });
+    });
+</script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap-5.0.2/js/popper.min.js"></script>
+<script src="../vendor/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/liens-redirection.js"></script>
+<script src="../js/page.js"></script>
+<script src="../vendor/bootstrap-5.0.2/js/bootstrap.js"></script>
+
+</html>

@@ -1,0 +1,83 @@
+*{
+  transition: 0.5s;
+}
+body {
+  background-color: white;
+  color: #212529;
+  transition: background-color 0.5s;
+  /* Ajoute une transition pour un effet fluide */
+}
+#changeColorButton {
+  position: fixed;
+  top: 0;
+  left: 50%; 
+  transform: translateX(-50%);
+  /* z-index: 999; */
+  padding: 10px 100% 0px;
+}
+
+.title {
+  display: inline-block;
+  background: linear-gradient(to left, #ffffffcc, #3274bb);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.dark-tm, .dark-tm:not(label){
+  background: #030d17;
+  color: #fff;
+}
+
+#logo {
+  width: 89.5px;
+  /* Nouvelle largeur */
+  height: 100px;
+  /* Nouvelle hauteur */
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+.eye-icon {
+  cursor: pointer;
+}
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.ml-m {
+  margin-left: 8%;
+}
+h2.ml-m {
+  background-color: #ffffffcc;
+  margin: 1px 10% 0px;
+  color: #030d17;
+}
+.mt-m {
+  margin-top: 12rem;
+}
+.bar-tm-dark{
+  padding: 5px;
+  background: #3274bb;
+  border-radius: 10px;
+}
+.custom-form {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffffcc;
+  /* Couleur de fond semi-transparente */
+  box-shadow: 0 2px 4px #0000001a;
+  /* Ombre douce */
+  backdrop-filter: blur(5px);
+  /* Effet de flou */
+}

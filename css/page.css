@@ -1,0 +1,133 @@
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.bg-dark-p {
+    background-color: #111;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    /* Définir la largeur de la barre latérale */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+    transition: all 0.5s;
+    /* Ajouter une transition pour l'effet de rétraction en douceur */
+}
+
+.sidebar.retracted {
+    width: 110px;
+    /* Réduire la largeur lorsque la classe 'retracted' est appliquée */
+    /* Ajoutez d'autres styles CSS pour la version rétractée de la barre latérale si nécessaire */
+}
+
+.sidebar a:not(.active) {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.logo {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+.left-side {
+    width: 110px;
+    height: 100vh;
+    background-color: #f8d7da;
+    /* couleur de fond à gauche */
+    float: left;
+    z-index: 999;
+    /* Pour garantir que l'élément reste au-dessus des autres contenus */
+}
+
+.right-side {
+    background-color: #cce5ff;
+    /* couleur de fond à droite */
+    overflow: auto;
+    height: 100vh;
+    padding: 0 2rem 0;
+}
+
+.content {
+    width: auto;
+    z-index: 0;
+}
+
+.top-fixed {
+    position: fixed;
+    left: 110px;
+    width: 100%;
+    overflow: auto;
+    padding: 12px;
+    transition: left 0.5s;
+}
+
+a.nav-link[title]:hover {
+    background-color: yellow;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.nav-item:nth-last-child(3) {
+    margin-top: 88%;
+}
+
+.nav-item:nth-last-child(-n+3) {
+    text-align: center;
+    color: #111;
+}
+
+.nav-item:nth-last-child(-n+2) {
+    max-height: 90px;
+}
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: calc(100% + 5px);
+    transform: translateX(-10%);
+    padding: 5px;
+    background-color: #030303;
+    color: #fff;
+    border-radius: 5px;
+    white-space: nowrap;
+    display: none;
+    z-index: 999;
+}
+
+[data-tooltip]:not(.active):hover:before {
+    display: block;
+}
+
+.active:not(.not-active){
+    background-color: #5464fc;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    color: #f1f1f1;
+    padding: 10px 15px;
+    font-weight: bold;
+}

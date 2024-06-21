@@ -1,0 +1,38 @@
+/* <div class="loader">
+    <div class="bar"></div>
+</div> */
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #efeef9;
+    width: 130px;
+    height: 6px;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    /*! border: solid black 1px; */
+    border-radius: 20px;
+}
+
+.bar {
+    width: 0%;
+    height: 150%;
+    background: linear-gradient(to right, #30cfd0, #3274bb);
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
