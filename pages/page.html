@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../vendor/font-awesome/css/all.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/load.css" />
+    <link rel="stylesheet" href="../css/infos.css" />
     <link rel="stylesheet" href="../css/page.css" />
 </head>
 
@@ -73,50 +74,31 @@
                                 class="link-title">Information</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link not-active" href="#">À Propos de Nous</a>
+                        <a class="nav-link no-active" href="#" onclick="loadAndToggleInfo()">À Propos de Nous</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link not-active" href="#">Nous Contacter</a>
+                        <a class="nav-link no-active" href="#">Nous Contacter</a>
                     </li>
                     <li class="nav-item">
-                        <span class="nav-link not-active">&copy; 2024</span>
+                        <span class="nav-link no-active">&copy; 2024</span>
                     </li>
                 </ul>
             </div>
         </div>
+
+        <div id="infoDiv">
+        </div>
+
         <div class="col right-side">
             <div class="bg-dark-p p-1 top-fixed" id="toprightside">
                 <h2 class="text-center" id="title-page">Discussions</h2>
             </div>
             <div class="content mt-5" id="mainContent">
-
+                
             </div>
         </div>
-
+    </div>
 </body>
-<script>
-    $('#mainContent').remove();
-    $(document).ready(function () {
-        $("#lienDiscussions").click(function () {
-            $("#mainContent").load("discussions.html #contentDiscussions");
-        });
-        $("#lienDiscussionsGroupe").click(function () {
-            $("#mainContent").load("discussions-groupe.html #contentDiscussionsGroupe");
-        });
-
-        $("#lienParametre").click(function () {
-            $("#mainContent").load("parametrage.html #contentParametrage");
-        });
-
-        $("#lienNouvelleDiscussions").click(function () {
-            $("#mainContent").load("nouvelle-discussions.html #contentNouvelleDiscussions");
-        });
-
-        $("#lienInformation").click(function () {
-            $("#mainContent").load("information.html #contentInformation");
-        });
-    });
-</script>
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/bootstrap-5.0.2/js/popper.min.js"></script>
 <script src="../vendor/bootstrap-5.0.2/js/bootstrap.min.js"></script>

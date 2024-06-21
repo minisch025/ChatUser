@@ -81,3 +81,8 @@ h2.ml-m {
   backdrop-filter: blur(5px);
   /* Effet de flou */
 }
+
+.p-l-r {
+  padding-left: 40%;
+  padding-right: 40%;
+}

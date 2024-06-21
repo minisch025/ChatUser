@@ -50,7 +50,7 @@
 .left-side {
     width: 110px;
     height: 100vh;
-    background-color: #f8d7da;
+    /* background-color: #f8d7da; */
     /* couleur de fond à gauche */
     float: left;
     z-index: 999;
@@ -58,16 +58,11 @@
 }
 
 .right-side {
-    background-color: #cce5ff;
+    /* background-color: #cce5ff; */
     /* couleur de fond à droite */
     overflow: auto;
     height: 100vh;
     padding: 0 2rem 0;
-}
-
-.content {
-    width: auto;
-    z-index: 0;
 }
 
 .top-fixed {
@@ -115,14 +110,14 @@ a.nav-link[title]:hover {
     border-radius: 5px;
     white-space: nowrap;
     display: none;
-    z-index: 999;
+    z-index: 9999;
 }
 
 [data-tooltip]:not(.active):hover:before {
     display: block;
 }
 
-.active:not(.not-active){
+.active:not(.no-active) {
     background-color: #5464fc;
     text-decoration: none;
     font-size: 18px;
