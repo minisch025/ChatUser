@@ -1,27 +1,48 @@
-#infoDiv {
-    text-align: justify;
-    display: none;
-    position: fixed;
-    width: 50%;
-    bottom: 100px;
-    top: 80px;
-    left: 20em;
-    right: 20em;
-    color: #000;
-    background-color: #fffffff1;
-    border-radius: 12px;
-    margin: 0 auto;
-    overflow-y: scroll;
-    padding: 20px;
-    z-index: 9999;
+#infoDiv,
+#form-inscription #conditionsDiv {
+  text-align: justify;
+  display: none;
+  position: fixed;
+  width: 50%;
+  bottom: 100px;
+  top: 80px;
+  left: 20em;
+  right: 20em;
+  color: #000;
+  background-color: #fffffff1;
+  border-radius: 12px;
+  margin: 0 auto;
+  overflow-y: scroll;
+  padding: 20px;
+  z-index: 9999;
+}
+#form-inscription #conditionsDiv {
+  position: fixed;
+  width: 220%;
+  bottom: 100px;
+  top: 80px;
+  left: -15em;
 }
 
 @media only screen and (max-width: 600px) {
-    #infoDiv {
-        width: 80%;
-        bottom: 10px;
-        top: 50px;
-        left: 4em;
-        overflow-y: scroll;
-    }
+  /* Les styles que vous souhaitez appliquer aux écrans de 600 pixels de largeur ou moins vont ici */
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+  }
+  #infoDiv {
+    width: 80%;
+    bottom: 10px;
+    top: 50px;
+    left: 4em;
+    overflow-y: scroll;
+  }
+  #form-inscription #conditionsDiv {
+    width: 100%;
+    left: 0em;
+    padding: 15px;
+  }
 }

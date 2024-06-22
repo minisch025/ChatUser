@@ -1,0 +1,15 @@
+<h2 class="text-danger text-center">Conditions d'utilisation :</h2>
+<p>1. Respectez la diversité des opinions et des croyances des autres utilisateurs.</p>
+<p>2. Évitez les propos diffamatoires, haineux, discriminatoires ou offensants.</p>
+<p>3. Ne partagez pas de contenu inapproprié, illégal, ou à caractère pornographique.</p>
+<p>4. Respectez la vie privée des autres et ne divulgez pas d'informations personnelles.</p>
+<p>5. Ne pratiquez pas le harcèlement, le stalking ou toute forme d'intimidation envers les autres utilisateurs.</p>
+<p>6. Évitez de monopoliser la conversation ou de perturber le bon fonctionnement du site.</p>
+
+<p class="text-center fw-bold">Restrictions obligatoires :</p>
+<p>1. Interdiction de partager des informations personnelles telles que numéros de téléphone, adresses, etc.</p>
+<p>2. Interdiction d'utiliser un langage vulgaire, insultant ou discriminatoire.</p>
+<p>3. Interdiction de partager des liens vers des sites malveillants ou frauduleux.</p>
+<p>4. Interdiction de promouvoir des activités illégales ou contraires à l'éthique.</p>
+
+<p><i class="text-danger text-decoration-underline">Remarque :</i> Le non-respect de ces conditions et restrictions peut entraîner un bannissement immédiat et permanent du site. Il est de la responsabilité de l'utilisateur de les respecter pour maintenir un environnement sûr et respectueux pour tous les participants.</p>

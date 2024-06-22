@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="vendor/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/infos.css" />
 </head>
 
 <body>
@@ -61,7 +62,7 @@
     </div>
   </div>
 
-  <div id="form-inscription" class="container mt-4" style="display: none; margin-bottom: 80px">
+  <div id="form-inscription" class="container mt-4" onsubmit="return validateForm()" style="display: none; margin-bottom: 80px">
     <p class="text-center" id="Inscription">
       Vous avez déjà un compte ?
       <a href="#Connexion" id="BtnSe-connecter" class="text-primary fw-bold text-decoration-underline">Se connecter</a>.
@@ -113,12 +114,13 @@
           </div>
           <div class="form-group form-check text-dark">
             <input type="checkbox" class="form-check-input" id="acceptConditions" />
-            <label class="form-check-label" for="acceptConditions">Accepter nos conditions d'utilisation.</label>
+            <label class="form-check-label" for="acceptConditions">J'accepte <a href="#conditions-utilisateur"
+                id="conditionsLink" data-toggle="modal" onclick="loadConditions()">les termes et conditions</a>
+              d'utilisateur.</label>
+            <div id="conditionsDiv"></div>
           </div>
           <div class="col text-center">
-            <button type="submit" class="btn btn-primary btn-block">
-              S'inscrire
-            </button>
+            <input type="submit" class="btn btn-primary btn-block" value="S'inscrire">
           </div>
         </form>
       </div>
@@ -140,6 +142,7 @@
 <script src="vendor/bootstrap-5.0.2/js/popper.min.js"></script>
 <script src="vendor/bootstrap-5.0.2/js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/condition.js"></script>
 <script src="vendor/bootstrap-5.0.2/js/bootstrap.js"></script>
 
 </html>
