@@ -61,7 +61,7 @@ if (document.getElementById("changeColorButton") && document.querySelector("body
         const currentHour = date.getHours();
         const body = document.querySelector("body");
 
-        if ((currentHour >= 20 || currentHour < 6) && !body.classList.contains("dark-tm")) {
+        if ((currentHour >= 20 || currentHour < 90) && !body.classList.contains("dark-tm")) {
             body.classList.add("dark-tm");
         }
     });

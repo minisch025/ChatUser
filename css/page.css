@@ -23,12 +23,6 @@
     /* Ajouter une transition pour l'effet de rétraction en douceur */
 }
 
-.sidebar.retracted {
-    width: 110px;
-    /* Réduire la largeur lorsque la classe 'retracted' est appliquée */
-    /* Ajoutez d'autres styles CSS pour la version rétractée de la barre latérale si nécessaire */
-}
-
 .sidebar a:not(.active) {
     padding: 10px 15px;
     text-decoration: none;
@@ -72,13 +66,7 @@
     overflow: auto;
     padding: 12px;
     transition: left 0.5s;
-}
-
-a.nav-link[title]:hover {
-    background-color: yellow;
-    color: black;
-    border: 1px solid black;
-    padding: 5px;
+    z-index: 99;
 }
 
 .nav-item:nth-last-child(3) {
@@ -125,4 +113,14 @@ a.nav-link[title]:hover {
     color: #f1f1f1;
     padding: 10px 15px;
     font-weight: bold;
+}
+
+/* Styles pour le bouton de notification */
+.notification-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
 }

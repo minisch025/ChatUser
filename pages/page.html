@@ -88,22 +88,180 @@
 
         <div id="infoDiv">
         </div>
+        <style>
+            .notification-bar {
+                border-radius: 12px;
+                margin: 3px 10%;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.8);
+                /* Fond transparent */
+                color: #fff;
+                /* Texte en blanc */
+                display: inline-block;
+                opacity: 0;
+                animation: slideIn 1.6s forwards;
+            }
 
+            @keyframes slideIn {
+                0% {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            .close-icon {
+                /* Styles CSS pour le bouton */
+                display: none;
+                position: fixed;
+                cursor: pointer;
+                margin: -15px 0px 0px -16px;
+                padding: 10px;
+                border-bottom-left-radius: 10px;
+                opacity: 60%;
+                z-index: 1000;
+            }
+
+            .close-icon:hover {
+                opacity: 100%;
+            }
+
+            /* Media query pour afficher le bouton en haut en mode responsive */
+            @media (max-width: 768px) {
+                .notification-bar {
+                    padding-bottom: 20px;
+                    padding-right: 20px;
+                }
+
+                .close-icon {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    margin: 10px;
+                    border-radius: 10px;
+                }
+            }
+        </style>
         <div class="col right-side">
             <div class="bg-dark-p p-1 top-fixed" id="toprightside">
                 <h2 class="text-center" id="title-page">Quoi de nouveau</h2>
             </div>
             <div class="content mt-5" id="mainContent">
-                
+                <div class="container">
+                    <div class="notification-bar bg-primary p-3 text-center text-light">
+                        Nouvelle activité sur le forum de discussion! Ne manquez pas les dernières réponses
+                        passionnantes et les discussions intéressantes en cours. <a href="#"
+                            class="notification-link text-light">Cliquez ici pour participer</a>
+                        <i class="fa fa-times close-icon bg-danger"></i>
+                    </div>
+                    <div class="notification-bar bg-dark text-light text-center">
+                        Nouvelle fonctionnalité <a href="#" class="notification-link text-light">Cliquez ici pour
+                            voir</a>
+                        <i class="fa fa-times close-icon bg-danger"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="notification-button p-2">
+                        <a class="nav-link fw-bold text-light no-active">
+                            <i class="fa fa-cloud-meatball fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="nav d-flex">
+                        <div class="notification-option p-3">
+                            <a class="nav-item fw-bold text-light no-active">
+                                <i class="fa fa-plus fa-lg"></i>
+                            </a>
+                        </div>
+                        <div class="notification-option p-3">
+                            <a class="nav-item fw-bold text-light no-active">
+                                <i class="fa fa-user fa-lg"></i>
+                            </a>
+                        </div>
+                        <div class="notification-option p-3">
+                            <a class="nav-item fw-bold text-light no-active">
+                                <i class="fa fa-notification fa-lg"></i>
+                            </a>
+                        </div>
+                        <div class="notification-option p-3">
+                            <a class="nav-item fw-bold text-light no-active">
+                                <i class="fa fa-logout fa-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<style>
+    .notification-option {
+        position: fixed;
+        bottom: 30px;
+        right: 120px;
+        background-color: blue;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        transition: transform 0.8s ease;
+        /* Ajout de l'effet de ralentissement */
+        transform: translateX(-100%);
+        /* Masquer l'élément en le déplaçant hors de l'écran à gauche */
+    }
+
+    .notification-option.show {
+        display: block;
+        transform: translateX(0);
+        /* Afficher l'élément en le ramenant à sa position d'origine */
+    }
+</style>
+<script>
+    document.querySelector('.notification-button').addEventListener('click', function () {
+        const options = document.querySelectorAll('.notification-option');
+        options.forEach(option => {
+            option.classList.toggle('show');
+        });
+    });
+    // Sélection de tous les éléments .notification-bar
+    const notificationBars = document.querySelectorAll('.notification-bar');
+
+    // Pour chaque élément .notification-bar, ajouter des écouteurs d'événements
+    notificationBars.forEach(notificationBar => {
+        notificationBar.addEventListener('mouseover', function () {
+            // Trouver l'élément .close-icon associé à cet élément .notification-bar
+            const closeIcon = notificationBar.querySelector('.close-icon');
+            if (closeIcon) {
+                closeIcon.style.transition = 'transform 0.8s ease';
+                closeIcon.style.display = 'block'
+            }
+        });
+
+        notificationBar.addEventListener('mouseout', function () {
+            // Trouver l'élément .close-icon associé à cet élément .notification-bar
+            const closeIcon = notificationBar.querySelector('.close-icon');
+            if (closeIcon) {
+                closeIcon.style.display = 'none';
+            }
+        });
+    });
+</script>
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/bootstrap-5.0.2/js/popper.min.js"></script>
 <script src="../vendor/bootstrap-5.0.2/js/bootstrap.min.js"></script>
 <script src="../js/script.js"></script>
 <script src="../js/liens-redirection.js"></script>
+<script src="../js/notification.js"></script>
 <script src="../js/page.js"></script>
 <script src="../vendor/bootstrap-5.0.2/js/bootstrap.js"></script>
 

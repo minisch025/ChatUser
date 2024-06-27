@@ -11,9 +11,11 @@
   color: #000;
   background-color: #fffffff1;
   border-radius: 12px;
+  border: solid 2px #000;
   margin: 0 auto;
   overflow-y: scroll;
   padding: 20px;
+  cursor: default;
   z-index: 9999;
 }
 #form-inscription #conditionsDiv {
