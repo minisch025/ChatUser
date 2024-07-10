@@ -53,3 +53,119 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+// Script de gestion du boutton plus et de la bar de notification
+function hideElement(Element) {
+    Element.forEach(hide => {
+        setTimeout(() => {
+            hide.classList.remove('show');
+        }, 5000); // 5 secondes
+    });
+}
+
+document.querySelector('#plus-button').addEventListener('click', function () {
+    const options = document.querySelectorAll('.plus-option');
+    options.forEach(option => {
+        option.classList.toggle('show');
+        option.style.transition = 'transform 2s ease';
+        hideElement(options);
+    });
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function () {
+        const options = document.querySelectorAll('.plus-option');
+        options.forEach(option => {
+            option.classList.remove('show');
+        });
+    });
+});
+
+document.querySelectorAll('.fa-chevron-down').forEach(link => {
+    link.addEventListener('click', function () {
+        const options = document.querySelectorAll('.topbar-element .fas');
+        options.forEach(option => {
+            option.classList.remove('hidden');
+        });
+    });
+});
+
+const hideSearch = document.querySelector(".fa-search");
+hideSearch.addEventListener("click", function () {
+const searchBar = document.querySelector(".search-bar");
+    if(searchBar.classList.contains('hidden')){
+        searchBar.classList.remove('hidden');
+    }
+    else{
+        searchBar.classList.add('hidden');
+        console.log("1 + 2 = ", 1+2);
+    }
+});
+
+// Géré l'affichage du menu en mode petit écrant
+const badge = document.querySelector(".badge");
+const leftside = document.querySelector(".left-side");
+
+badge.addEventListener("click", function () {
+    if(leftside.classList.contains('hide')){
+        leftside.classList.remove('hide');
+    }
+    else{
+        leftside.classList.add('hide');
+        console.log("1 + 1 = ", 1+1);
+    }
+});
+//
+let leftSide = document.querySelector(".left-side");
+let startX;
+let startY;
+let distance = 0;
+
+leftSide.addEventListener('touchstart', function (event) {
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+});
+
+leftSide.addEventListener('touchmove', function (event) {
+    let currentX = event.touches[0].clientX;
+    let currentY = event.touches[0].clientY;
+
+    let diffX = startX - currentX;
+    let diffY = startY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY) && diffX > 0) {
+        // Swiping left
+        distance += diffX;
+        leftSide.style.transform = `translateX(-${distance}px)`;
+    }
+});
+
+leftSide.addEventListener('touchend', function (event) {
+    distance = 0;
+    leftSide.style.transform = 'translateX(0)';
+});
+
+
+// Sélection de tous les éléments .notification-bar
+const notificationBars = document.querySelectorAll('.notification-bar');
+
+// Pour chaque élément .notification-bar, ajouter des écouteurs d'événements
+notificationBars.forEach(notificationBar => {
+    notificationBar.addEventListener('mouseover', function () {
+        // Trouver l'élément .close-icon associé à cet élément .notification-bar
+        const closeIcon = notificationBar.querySelector('.close-icon');
+        if (closeIcon) {
+            closeIcon.style.transition = 'transform 2s ease';
+            closeIcon.style.display = 'block'
+        }
+    });
+
+    notificationBar.addEventListener('mouseout', function () {
+        // Trouver l'élément .close-icon associé à cet élément .notification-bar
+        const closeIcon = notificationBar.querySelector('.close-icon');
+        if (closeIcon) {
+            closeIcon.style.display = 'none';
+        }
+    });
+});

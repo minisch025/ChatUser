@@ -59,26 +59,32 @@
     padding: 0 2rem 0;
 }
 
+#mainContent .container{
+    margin-top: 90px;
+}
+
 .top-fixed {
     position: fixed;
     left: 110px;
+    top: 0;
     width: 100%;
+    color: #f1f1f1;
     overflow: auto;
     padding: 12px;
     transition: left 0.5s;
     z-index: 99;
 }
 
-.nav-item:nth-last-child(3) {
+.sidebar .nav-item:nth-last-child(3) {
     margin-top: 88%;
 }
 
-.nav-item:nth-last-child(-n+3) {
+.sidebar .nav-item:nth-last-child(-n+3) {
     text-align: center;
     color: #111;
 }
 
-.nav-item:nth-last-child(-n+2) {
+.sidebar .nav-item:nth-last-child(-n+2) {
     max-height: 90px;
 }
 
@@ -115,12 +121,154 @@
     font-weight: bold;
 }
 
-/* Styles pour le bouton de notification */
-.notification-button {
+/* Styles pour le bouton de plus */
+.plus-button {
     position: fixed;
     bottom: 30px;
     right: 30px;
     background-color: blue;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Style pour le boutton plus et la bar de notification */
+
+.notification-bar {
+    border-radius: 12px;
+    margin: 3px 10%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fond transparent */
+    color: #fff;
+    /* Texte en blanc */
+    display: inline-block;
+    opacity: 0;
+    animation: slideIn 1.6s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.close-icon {
+    /* Styles CSS pour le bouton */
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    margin: -15px 0px 0px -16px;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    opacity: 60%;
+    z-index: 1000;
+}
+
+.close-icon:hover {
+    opacity: 100%;
+}
+
+.container.nav {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    /* Aligner les éléments de droite à gauche */
+    justify-content: flex-start;
+    /* Aligner les éléments au bord droit */
+}
+
+.all-option {
+    position: fixed;
+    bottom: 30px;
+    top: 595px;
+    right: 100px;
+    z-index: 999;
+}
+
+.plus-option {
+    background-color: blue;
+    padding: 16px;
+    padding-right: 18px;
+    padding-left: 18px;
+    margin-right: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.8s ease;
+    /* Ajout de l'effet de ralentissement */
+    transform: translateX(0);
+    /* Masquer l'élément en le déplaçant hors de l'écran à gauche */
+}
+
+.plus-option.show {
+    display: flex;
+    transform: translateX(0%);
+    /* Afficher l'élément en le ramenant à sa position d'origine */
+    transition: transform 0.8s ease;
+}
+.badge{
+    display: none;
+}
+
+/* Media query pour géré en mode responsive */
+@media (max-width: 768px) {
+    .notification-bar {
+        padding-bottom: 20px;
+        padding-right: 20px;
+    }
+    .hide{
+        display: none;
+    }
+    .badge{
+        display: inline-flex;
+        /* padding: 8px; */
+        /* border: solid 1px #f1f1f1; */
+        margin: 20px;
+        cursor: pointer;
+    }
+    .close-icon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    .top-fixed{
+        left: 0;
+        margin-top: 30px;
+        position: inherit;
+        border-radius: 20px;
+    }
+    .nav {
+        display: inline-block;
+    }
+
+    .plus-button {
+        bottom: 45%;
+        right: 30px;
+    }
+
+    .all-option {
+        display: inline-flex;
+        top: 325px;
+        right: 30px;
+        bottom: 64%;
+        left: 622px;
+    }
+
+    .plus-option.show {  /* Sur un écrant de 800 prendre 1195px sur le top*/
+        display: flex;
+        padding: 16px;
+        padding-right: 25px;
+        padding-left: 25px;
+        top: 1195px;
+        transform: translateX(0%);
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
 }

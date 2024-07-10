@@ -55,13 +55,22 @@ if (document.getElementById("changeColorButton") && document.querySelector("body
             body.classList.remove("dark-tm");
         }
     });
-    
+
+    // const optionUser = document.querySelector('.darkModeToggle');
+    // optionUser.addEventListener("click", function () {
+    //     if(body.classList.contains('dark-tm')) {
+    //         body.classList.remove("dark-tm");
+    //     }
+    //     else{
+    //         body.classList.add("dark-tm");
+    //     }
+    // });
     document.addEventListener('DOMContentLoaded', function () {
         const date = new Date();
         const currentHour = date.getHours();
         const body = document.querySelector("body");
 
-        if ((currentHour >= 20 || currentHour < 90) && !body.classList.contains("dark-tm")) {
+        if ((currentHour >= 20 || currentHour < 6) && !body.classList.contains("dark-tm")) {
             body.classList.add("dark-tm");
         }
     });

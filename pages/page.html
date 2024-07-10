@@ -36,7 +36,7 @@
 
     <!-- Le cotenue de la page page.html -->
     <div class="content" id="page">
-        <div class="col left-side" id="left-side">
+        <div class="col left-side hide" id="left-side">
             <!-- Contenu de la partie gauche -->
             <div class="sidebar" id="element">
                 <div class="container text-center">
@@ -86,71 +86,101 @@
             </div>
         </div>
 
-        <div id="infoDiv">
-        </div>
-        <style>
-            .notification-bar {
-                border-radius: 12px;
-                margin: 3px 10%;
-                padding: 20px;
-                background-color: rgba(0, 0, 0, 0.8);
-                /* Fond transparent */
-                color: #fff;
-                /* Texte en blanc */
-                display: inline-block;
-                opacity: 0;
-                animation: slideIn 1.6s forwards;
-            }
-
-            @keyframes slideIn {
-                0% {
-                    transform: translateX(-100%);
-                    opacity: 0;
-                }
-
-                100% {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-
-            .close-icon {
-                /* Styles CSS pour le bouton */
-                display: none;
-                position: fixed;
-                cursor: pointer;
-                margin: -15px 0px 0px -16px;
-                padding: 10px;
-                border-bottom-left-radius: 10px;
-                opacity: 60%;
-                z-index: 1000;
-            }
-
-            .close-icon:hover {
-                opacity: 100%;
-            }
-
-            /* Media query pour afficher le bouton en haut en mode responsive */
-            @media (max-width: 768px) {
-                .notification-bar {
-                    padding-bottom: 20px;
-                    padding-right: 20px;
-                }
-
-                .close-icon {
-                    position: fixed;
-                    top: 0;
-                    right: 0;
-                    margin: 10px;
-                    border-radius: 10px;
-                }
-            }
-        </style>
+        <div id="infoDiv"></div>
         <div class="col right-side">
             <div class="bg-dark-p p-1 top-fixed" id="toprightside">
-                <h2 class="text-center" id="title-page">Quoi de nouveau</h2>
+                <style>
+                    .trace {
+                        padding: 16px;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                        margin-bottom: 4px;
+                        background-color: #FFF;
+                        border-radius: 5px;
+                    }
+
+                    /* Style pour le changement de thème */
+                    .theme-toggle {
+                        cursor: pointer;
+                    }
+
+                    .topbar-element {
+                        left: 70%;
+                        position: absolute;
+                    }
+
+                    .topbar-element i {
+                        margin: 10px;
+                        padding: 10px;
+                        background-color: #303030;
+                        color: #f0f0f0;
+                        cursor: pointer;
+                        /* border: solid 1px #fff;
+                        border-radius: 50%; */
+                    }
+
+                    .barOption {
+                        position: fixed;
+                        display: inline-grid;
+                        left: 80%;
+                        right: 30px;
+                        top: 60px;
+                        margin-bottom: 70px;
+                        background-color: #303030;
+                        border-bottom-left-radius: 12px;
+                        border-bottom-right-radius: 12px;
+                    }
+
+                    .search-bar {
+                        left: -90%;
+                        top: 20px;
+                        position: absolute;
+                    }
+
+                    /* Style pour la photo de profil */
+                    .profile-image {
+                        width: 110px;
+                        /* Taille de la photo */
+                        height: 110px;
+                        border-radius: 50%;
+                        /* Forme circulaire */
+                        object-fit: cover;
+                        /* Empêche le rognage de l'image */
+                        margin-bottom: 10px;
+                    }
+                </style>
+                <div class="badge nav">
+                    <div class="trace nav-item"></div>
+                    <div class="trace nav-item"></div>
+                    <div class="trace nav-item"></div>
+                </div>
+                <div class="title-page">
+                    <h2 class="text-center" style="margin-left: 15%;margin: 12px;" id="title-page">Quoi de nouveau</h2>
+                </div>
+                <div class="topbar-element text-center">
+                    <input type="search" placeholder="Rechercher..." class="search-bar hidden">
+                    <i class="fas fa-search rounded-circle"></i>
+                    <i class="fas fa-bell rounded-circle"></i>
+                    <!-- <h5>Thème Jour/Nuit</h5> -->
+                    <i class="fas fa-chevron-down rounded-circle"></i>
+                    <div class="barOption">
+                        <div class="row mt-3">
+                            <div class="col-md-2 offset-md-3">
+                                <img src="../images/logo.png" alt="Photo de profil" class="profile-image">
+                                <h4>ChatUser</h4>
+                                <a href="#" class="btn btn-link text-light"><i class="fas fa-pencil-alt"></i>
+                                    Modifier</a>
+                            </div>
+                            <a href="#" class="btn btn-link text-light"> Mon compte <i class="fas fa-user rounded-circle"></i></a>
+                            <a href="#" class="btn btn-link text-light"> Changer de mode<i id="themeToggleIcon"
+                                    class="fas fa-sun theme-toggle rounded-circle"></i></a>
+                            <a href="#" class="btn btn-link text-light"> Deconnexion <i class="fas fa-sign-out-alt rounded-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="content mt-5" id="mainContent">
+            <div class="content mt-2" id="mainContent">
+                <!-- Conteneur du code des page qui sont charger -->
                 <div class="container">
                     <div class="notification-bar bg-primary p-3 text-center text-light">
                         Nouvelle activité sur le forum de discussion! Ne manquez pas les dernières réponses
@@ -169,7 +199,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="notification-button p-2">
+                    <div class="plus-button p-2" id="plus-button">
                         <a class="nav-link fw-bold text-light no-active">
                             <i class="fa fa-cloud-meatball fa-lg"></i>
                         </a>
@@ -178,25 +208,25 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="nav d-flex">
-                        <div class="notification-option p-3">
+                    <div class="nav all-option">
+                        <div class="plus-option">
                             <a class="nav-item fw-bold text-light no-active">
                                 <i class="fa fa-plus fa-lg"></i>
                             </a>
                         </div>
-                        <div class="notification-option p-3">
+                        <div class="plus-option">
                             <a class="nav-item fw-bold text-light no-active">
                                 <i class="fa fa-user fa-lg"></i>
                             </a>
                         </div>
-                        <div class="notification-option p-3">
+                        <div class="plus-option">
                             <a class="nav-item fw-bold text-light no-active">
-                                <i class="fa fa-notification fa-lg"></i>
+                                <i class="fa fa-plus fa-lg"></i>
                             </a>
                         </div>
-                        <div class="notification-option p-3">
+                        <div class="plus-option">
                             <a class="nav-item fw-bold text-light no-active">
-                                <i class="fa fa-logout fa-lg"></i>
+                                <i class="fa fa-plus fa-lg"></i>
                             </a>
                         </div>
                     </div>
@@ -205,55 +235,19 @@
         </div>
     </div>
 </body>
-<style>
-    .notification-option {
-        position: fixed;
-        bottom: 30px;
-        right: 120px;
-        background-color: blue;
-        border-radius: 5px;
-        cursor: pointer;
-        display: none;
-        transition: transform 0.8s ease;
-        /* Ajout de l'effet de ralentissement */
-        transform: translateX(-100%);
-        /* Masquer l'élément en le déplaçant hors de l'écran à gauche */
-    }
-
-    .notification-option.show {
-        display: block;
-        transform: translateX(0);
-        /* Afficher l'élément en le ramenant à sa position d'origine */
-    }
-</style>
 <script>
-    document.querySelector('.notification-button').addEventListener('click', function () {
-        const options = document.querySelectorAll('.notification-option');
-        options.forEach(option => {
-            option.classList.toggle('show');
-        });
-    });
-    // Sélection de tous les éléments .notification-bar
-    const notificationBars = document.querySelectorAll('.notification-bar');
+    const themeToggleIcon = document.getElementById('themeToggleIcon');
+    const body = document.body;
 
-    // Pour chaque élément .notification-bar, ajouter des écouteurs d'événements
-    notificationBars.forEach(notificationBar => {
-        notificationBar.addEventListener('mouseover', function () {
-            // Trouver l'élément .close-icon associé à cet élément .notification-bar
-            const closeIcon = notificationBar.querySelector('.close-icon');
-            if (closeIcon) {
-                closeIcon.style.transition = 'transform 0.8s ease';
-                closeIcon.style.display = 'block'
-            }
-        });
-
-        notificationBar.addEventListener('mouseout', function () {
-            // Trouver l'élément .close-icon associé à cet élément .notification-bar
-            const closeIcon = notificationBar.querySelector('.close-icon');
-            if (closeIcon) {
-                closeIcon.style.display = 'none';
-            }
-        });
+    themeToggleIcon.addEventListener('click', function () {
+        body.classList.toggle('dark-tm');
+        if (body.classList.contains('dark-tm')) {
+            themeToggleIcon.classList.remove('fa-sun');
+            themeToggleIcon.classList.add('fa-moon');
+        } else {
+            themeToggleIcon.classList.remove('fa-moon');
+            themeToggleIcon.classList.add('fa-sun');
+        }
     });
 </script>
 <script src="../vendor/jquery/jquery.min.js"></script>
