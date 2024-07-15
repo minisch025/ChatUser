@@ -69,9 +69,17 @@ if (document.getElementById("changeColorButton") && document.querySelector("body
         const date = new Date();
         const currentHour = date.getHours();
         const body = document.querySelector("body");
+        const themeToggleIcon = document.querySelector('.theme-toggle');
 
         if ((currentHour >= 20 || currentHour < 6) && !body.classList.contains("dark-tm")) {
             body.classList.add("dark-tm");
+            if (body.classList.contains('dark-tm')) {
+                themeToggleIcon.classList.remove('fa-sun');
+                themeToggleIcon.classList.add('fa-moon');
+            } else {
+                themeToggleIcon.classList.remove('fa-moon');
+                themeToggleIcon.classList.add('fa-sun');
+            }
         }
     });
 }

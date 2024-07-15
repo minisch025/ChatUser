@@ -82,24 +82,51 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-document.querySelectorAll('.fa-chevron-down').forEach(link => {
-    link.addEventListener('click', function () {
-        const options = document.querySelectorAll('.topbar-element .fas');
-        options.forEach(option => {
-            option.classList.remove('hidden');
-        });
-    });
+// // 
+// function handleClickOutside(element, callback) {
+//     element.classList.remove('hidden');
+//     document.addEventListener('click', function (event) {
+//         if (!element.contains(event.target)) {
+//             element.classList.add('hidden');
+//             callback();
+//         }
+//     });
+// }
+
+// const element = document.querySelector(".barOption");
+// const callbackFunction = () => console.log('Element hidden');
+// handleClickOutside(element, callbackFunction);
+
+// // 
+const hidebarOption = document.querySelector("#chevron-down");
+hidebarOption.addEventListener("click", function () {
+    const barOption = document.querySelector(".barOption");
+    if (barOption.classList.contains('hidden')) {
+        barOption.classList.remove('hidden');
+        hidebarOption.classList.remove('fa-chevron-down');
+        hidebarOption.classList.add('fa-chevron-up');
+    }
+    else {
+        barOption.classList.add('hidden');
+        hidebarOption.classList.remove('fa-chevron-up');
+        hidebarOption.classList.add('fa-chevron-down');
+        console.log("1 + 2 = ", 1 + 2);
+    }
 });
 
-const hideSearch = document.querySelector(".fa-search");
+const hideSearch = document.querySelector("#fa-search");
+const closeSearchBar = document.querySelector("#fa-close");
 hideSearch.addEventListener("click", function () {
-const searchBar = document.querySelector(".search-bar");
-    if(searchBar.classList.contains('hidden')){
+    const searchBar = document.querySelector(".search-bar");
+    if (searchBar.classList.contains('hidden')) {
         searchBar.classList.remove('hidden');
     }
-    else{
+});
+closeSearchBar.addEventListener("click", function () {
+    const searchBar = document.querySelector(".search-bar");
+    if (!searchBar.classList.contains('hidden')) {
         searchBar.classList.add('hidden');
-        console.log("1 + 2 = ", 1+2);
+        console.log("1 + 2 = ", 1 + 2);
     }
 });
 
@@ -108,12 +135,12 @@ const badge = document.querySelector(".badge");
 const leftside = document.querySelector(".left-side");
 
 badge.addEventListener("click", function () {
-    if(leftside.classList.contains('hide')){
+    if (leftside.classList.contains('hide')) {
         leftside.classList.remove('hide');
     }
-    else{
+    else {
         leftside.classList.add('hide');
-        console.log("1 + 1 = ", 1+1);
+        console.log("1 + 1 = ", 1 + 1);
     }
 });
 //

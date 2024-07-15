@@ -107,46 +107,78 @@
                     .topbar-element {
                         left: 70%;
                         position: absolute;
+                        user-select: none;
                     }
 
                     .topbar-element i {
                         margin: 10px;
                         padding: 10px;
-                        background-color: #303030;
-                        color: #f0f0f0;
+                        background-color: #3030306b;
+                        color: #f0f0f0c0;
                         cursor: pointer;
-                        /* border: solid 1px #fff;
-                        border-radius: 50%; */
+                        transition: 0.5ms;
+                    }
+
+                    .topbar-element i:hover {
+                        background-color: #303030;
+                        color: #fff;
                     }
 
                     .barOption {
                         position: fixed;
-                        display: inline-grid;
-                        left: 80%;
+                        /* left: 80%; */
                         right: 30px;
-                        top: 60px;
-                        margin-bottom: 70px;
-                        background-color: #303030;
+                        /* top: 60px; */
+                        padding: 20px;
+                        background-color: #202020;
                         border-bottom-left-radius: 12px;
                         border-bottom-right-radius: 12px;
+                        z-index: 1;
+                    }
+
+                    .barOption i {
+                        margin: 0px;
+                        padding: 0px;
+                        background-color: transparent;
+                        color: #c2c2c2;
+                        cursor: pointer;
+                        transition: 0.5ms;
+                    }
+
+                    .barOption i:hover {
+                        background-color: transparent;
+                        color: #f0f0f0;
+                    }
+
+                    .barOption a {
+                        text-decoration: none;
+                        background: #000;
+                    }
+
+                    .barOption a:hover {
+                        background-color: #303030;
                     }
 
                     .search-bar {
-                        left: -90%;
-                        top: 20px;
+                        left: -38vh;
                         position: absolute;
                     }
 
                     /* Style pour la photo de profil */
-                    .profile-image {
-                        width: 110px;
-                        /* Taille de la photo */
-                        height: 110px;
+                    .circle {
+                        margin-left: 5px;
+                        width: 80px;
+                        height: 80px;
                         border-radius: 50%;
-                        /* Forme circulaire */
+                        overflow: hidden;
+                        position: relative;
+                    }
+                    
+                    .circle img {
+                        width: 100%;
+                        height: 100%;
                         object-fit: cover;
-                        /* Empêche le rognage de l'image */
-                        margin-bottom: 10px;
+                        cursor: pointer;
                     }
                 </style>
                 <div class="badge nav">
@@ -157,29 +189,43 @@
                 <div class="title-page">
                     <h2 class="text-center" style="margin-left: 15%;margin: 12px;" id="title-page">Quoi de nouveau</h2>
                 </div>
+                <div>
+
+                </div>
                 <div class="topbar-element text-center">
-                    <input type="search" placeholder="Rechercher..." class="search-bar hidden">
-                    <i class="fas fa-search rounded-circle"></i>
+                    <div class="search-bar hidden">
+                        <i class="fas fa-close" id="fa-close"></i>
+                        <input type="search" placeholder="Rechercher...">
+                    </div>
+                    <i class="fas fa-search rounded-circle" id="fa-search"></i>
                     <i class="fas fa-bell rounded-circle"></i>
                     <!-- <h5>Thème Jour/Nuit</h5> -->
-                    <i class="fas fa-chevron-down rounded-circle"></i>
-                    <div class="barOption">
-                        <div class="row mt-3">
-                            <div class="col-md-2 offset-md-3">
-                                <img src="../images/logo.png" alt="Photo de profil" class="profile-image">
-                                <h4>ChatUser</h4>
-                                <a href="#" class="btn btn-link text-light"><i class="fas fa-pencil-alt"></i>
-                                    Modifier</a>
+                    <i class="fas fa-chevron-down rounded-circle" id="chevron-down"></i>
+                    <div class="barOption hidden">
+                        <div class="offset-md-1" style="margin-left: 0;">
+                            <div style="display: flex;">
+                                <div class="circle" id="themeToggle">
+                                    <img src="../images/ecrant.png" alt="Photo de profil">
+                                </div>
+                                <div class="circle">
+                                    <img src="../images/search.png" alt="Photo de profil">
+                                </div>
+                                <div class="circle">
+                                    <img src="../images/log out.png" alt="Photo de profil">
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-link text-light"> Mon compte <i class="fas fa-user rounded-circle"></i></a>
-                            <a href="#" class="btn btn-link text-light"> Changer de mode<i id="themeToggleIcon"
-                                    class="fas fa-sun theme-toggle rounded-circle"></i></a>
-                            <a href="#" class="btn btn-link text-light"> Deconnexion <i class="fas fa-sign-out-alt rounded-circle"></i></a>
+                            <h4>ChatUser</h4>
+                            <div class="">
+                                <a href="#" class="btn btn-link text-light"> Mon compte <i
+                                        class="fas fa-user rounded-circle"></i></a>
+                                <a href="#" class="btn btn-link text-light" id="themeToggle"><i
+                                        class="fas fa-sun theme-toggle rounded-circle"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="content mt-2" id="mainContent">
+            <div class="content" id="mainContent">
                 <!-- Conteneur du code des page qui sont charger -->
                 <div class="container">
                     <div class="notification-bar bg-primary p-3 text-center text-light">
@@ -200,7 +246,7 @@
             <div class="row">
                 <div class="col">
                     <div class="plus-button p-2" id="plus-button">
-                        <a class="nav-link fw-bold text-light no-active">
+                        <a class="btn btn-link fw-bold text-light no-active">
                             <i class="fa fa-cloud-meatball fa-lg"></i>
                         </a>
                     </div>
@@ -210,22 +256,22 @@
                 <div class="col">
                     <div class="nav all-option">
                         <div class="plus-option">
-                            <a class="nav-item fw-bold text-light no-active">
+                            <a class="btn btn-link fw-bold text-light no-active">
                                 <i class="fa fa-plus fa-lg"></i>
                             </a>
                         </div>
                         <div class="plus-option">
-                            <a class="nav-item fw-bold text-light no-active">
+                            <a class="btn btn-link fw-bold text-light no-active">
                                 <i class="fa fa-user fa-lg"></i>
                             </a>
                         </div>
                         <div class="plus-option">
-                            <a class="nav-item fw-bold text-light no-active">
+                            <a class="btn btn-link fw-bold text-light no-active">
                                 <i class="fa fa-plus fa-lg"></i>
                             </a>
                         </div>
                         <div class="plus-option">
-                            <a class="nav-item fw-bold text-light no-active">
+                            <a class="btn btn-link fw-bold text-light no-active">
                                 <i class="fa fa-plus fa-lg"></i>
                             </a>
                         </div>
@@ -236,18 +282,25 @@
     </div>
 </body>
 <script>
-    const themeToggleIcon = document.getElementById('themeToggleIcon');
+    const themeToggle = document.querySelectorAll('#themeToggle');
+    const themeToggleIcon = document.querySelectorAll('.theme-toggle');
     const body = document.body;
 
-    themeToggleIcon.addEventListener('click', function () {
-        body.classList.toggle('dark-tm');
-        if (body.classList.contains('dark-tm')) {
-            themeToggleIcon.classList.remove('fa-sun');
-            themeToggleIcon.classList.add('fa-moon');
-        } else {
-            themeToggleIcon.classList.remove('fa-moon');
-            themeToggleIcon.classList.add('fa-sun');
-        }
+    themeToggle.forEach(link => {
+        link.addEventListener('click', function () {
+            body.classList.toggle('dark-tm');
+            if (body.classList.contains('dark-tm')) {
+                themeToggleIcon.forEach(icon => {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                });
+            } else {
+                themeToggleIcon.forEach(icon => {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                });
+            }
+        });
     });
 </script>
 <script src="../vendor/jquery/jquery.min.js"></script>

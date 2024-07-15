@@ -11,6 +11,10 @@ a{
   cursor: pointer;
 }
 
+.content{
+  margin-top: 2rem;
+}
+
 #changeColorButton {
   position: fixed;
   top: 0;
