@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonhomme de Neige</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            height: 100hv;
+            background: #b1def5;
+        }
+        .circle{
+            position: absolute;
+            top: 20px;
+            padding: 20vh;
+            border-radius: 100vh;
+            background: #fff;
+        }
+        .circle:nth-child(2){
+            transform: translateY(180px);
+            padding: 30vh;
+        }
+        .branchs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .branch{
+            position: absolute;
+            background: #6c3f03;
+        }
+        .branch:nth-child(1){
+            padding: 6px 60px;
+            margin: 0 0 170px 300px;
+            transform: rotateZ(130deg);
+        }
+        .branch:nth-child(2){
+            padding: 6px 15px;
+            margin: 0 0 250px 340px;
+            transform: rotateZ(70deg);
+        }
+        .branch:nth-child(3){
+            padding: 6px 15px;
+            margin: 0 0 220px 380px;
+            transform: rotateZ(190deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    
+    <div class="branchs">
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+    </div>
+</body>
+</html>

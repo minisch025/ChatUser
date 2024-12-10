@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="HxA-Google.scale-200.png" type="image/x-icon">
+    <title>Rechercher sur Google</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* border: solid red 1px; */
+        }
+        @keyframes appear {
+            from{
+                opacity: 0;
+                clip-path: inset(100% 100% 0 0);
+                /* transform: translateX(-100px); */
+                /* scale: 0.5; */
+            }
+            to{
+                opacity: 1;
+                clip-path: inset(0 0 0 0);
+                /* transform: translateX(0px); */
+                /* scale: 1; */	
+            }
+        }
+        .logo{
+            animation: appear 0.6s linear;
+        }
+        body{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .link:hover{
+            color: #4285f4;
+        }
+        .head{
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+        }
+        .head span{
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 30px 70px 0 0;
+            border-radius: 5vh;
+            border: solid 2px #4285f4;
+        }
+        .head span.link:hover{
+            color: #fff;
+            background: #4285f4;
+            cursor: pointer;
+        }
+        .main:not(.name){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 85vh;
+        }
+        .main .logo{
+            position: absolute;
+            margin-bottom: 50vh;
+        }
+        .main .name{
+            margin: 15px;
+            user-select: none;
+        }
+        .main .name span{
+            font-size: 50px;
+            font-weight: 1000;
+            margin: 0 0 0 -10px;
+        }
+        .main .search input{
+            margin-bottom: 10px;
+            padding: 14px 20px;
+            border: solid 1px;
+            border-radius: 50px;
+        }
+        .main .search img{
+            position: absolute;
+            height: 30px;
+            margin: 10px;
+            /* border: solid 1px #181818; */
+        }
+        .main .name span{
+            color: var(--clr);
+        }
+        .main .link-img{
+            border-radius: 100vh;
+        }
+        .main .lang{
+            font-size: 10px;
+        }
+        .lang span{
+            color: #4285f4;
+        }
+        footer{
+            position: absolute;
+            display: flex;
+            justify-content: space-around;
+            font-size: 12px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <span class="link" title="Mon compte">Connexion</span>
+    </div>
+    <div class="main">
+        <img src="HxA-Google.scale-200.png" alt="google" class="logo">
+        <p class="hide">By @minisch025</p>
+        <div class="search">
+            <input type="text" placeholder="Rechercher sur Google"> <a href="#" class="link"><img src="folder-saved-search.svg" alt=""></a>
+        </div>
+        <div class="name">
+            <span style="--clr:#4285f4;">G</span>
+            <span style="--clr:#ea4335;">o</span>
+            <span style="--clr:#fbbc05;">o</span>
+            <span style="--clr:#4285f4;">g</span>
+            <span style="--clr:#34a853;">l</span>
+            <span style="--clr:#ea4335;">e</span>
+        </div>
+        <a href="" class="link"><img src="i.svg" alt="" height="40" class="link-img" title="Aller sur google image"></a>
+        <p class="lang">Langue <span title="fr-FR">Francais</span> | <a href="#" class="link" title="Other language ?">Autres ?</a></p>
+    </div>
+    <footer>
+        <p>Copyrigth © Google  |   Tous Droits Réservées.</p>
+    </footer>
+</body>
+</html>

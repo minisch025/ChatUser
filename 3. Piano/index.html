@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #67701d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0 20vh;
+        }
+        .touch{
+            width: 100vh;
+            height: 38vh;
+            background-color: #fff;
+            border: solid 2px #1d1e22;
+            border-radius: 3px;
+        }
+        .diese{
+            margin-right: 10px;
+            width: 6vh;
+            height: 20vh;
+            background-color: #1d1e22;
+            border-radius: 3px;
+            z-index: 9999;
+        }
+        .diese-group2{
+            /* border: solid red 1px; */
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            margin-left: 12vh;
+            transform: translateY(-55px);
+        }
+        .touch2{
+            display: flex;
+            margin-right: 45vh;
+        }
+        .diese-group3{
+            border: solid red 1px;
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            margin-left: 12vh;d
+            transform: translateY(-55px);
+        }
+        .touch3{
+            display: flex;
+            margin-right: 5vh;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- J'sais pas vraiment si c'est necessaire un contener ici -->
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <div class="touch"></div>
+    <!-- ...bref je continue -->
+    
+    <div class="diese-group2">
+        <div class="touch2">
+            <div class="touch-diese2 diese"></div>
+            <div class="touch-diese2 diese"></div>
+        </div>
+        <div class="touch2">
+            <div class="touch-diese2 diese"></div>
+            <div class="touch-diese2 diese"></div>
+        </div>
+        <div class="touch2">
+            <div class="touch-diese2 diese"></div>
+            <div class="touch-diese2 diese"></div>
+        </div>
+    </div>
+    
+    <div class="diese-group3">
+        <div class="touch3">
+            <div class="touch-diese3 diese"></div>
+            <div class="touch-diese3 diese"></div>
+            <div class="touch-diese3 diese"></div>
+        </div>
+        <div class="touch2">
+            <div class="touch-diese3 diese"></div>
+            <div class="touch-diese3 diese"></div>
+            <div class="touch-diese3 diese"></div>
+        </div>
+        <div class="touch3">
+            <div class="touch-diese3 diese"></div>
+            <div class="touch-diese3 diese"></div>
+            <div class="touch-diese3 diese"></div>
+        </div>
+    </div>
+</body>
+</html>
