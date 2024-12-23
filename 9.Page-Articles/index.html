@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliko - Un choix, le votre</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            /* border: solid red 1px; */
+        }
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 100%;
+            margin: 5vh;
+            gap: 20px;
+        }
+        .content .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: solid 1px #c9c9c9;
+            height: 80vh;
+            width: 50vh;
+        }
+        .container .fond{
+            padding: 0.5em;
+        }
+        .container .fond img{
+            height: auto;
+            width: 30vh;
+        }
+        .container .infos-prod{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            font-size: 22px;
+            gap: 4em;
+        }
+        .container .infos-prod p{
+            color: #0e45bd;
+        }
+        .container .descrip-prod{
+            padding: 10px;
+        }
+        .container .descrip-prod p{
+            color: #3a3a3a;
+        }
+        .container .eval-prod{
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            top: 10px;
+            gap: 8em;
+        }
+        .container .eval-prod span.star{
+            color: #f81515;
+            font-size: 18px;
+        }
+        .container .eval-prod span.star::before{
+            content: "\2605\2605\2605\2605";
+        }
+        .container .eval-prod p{
+            color: #f81515;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- J'avais plus les iamges d'origine, j'ai pense d'abord faire des screen de celle sur le PDF mais... non non non ! J'ai rajouter des image open source d'IA -->
+    <div class="content">
+        <div class="container">
+            <div class="fond">
+                <img src="img1.jpg" alt="fond">
+            </div>
+            <div class="infos-prod">
+                <p>Title goes here</p>
+                <span>$25.75</span>
+            </div>
+            <div class="descrip-prod">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit minima debitis asperiores cupiditate perspiciatis repellat.</p>
+            </div>
+            <div class="eval-prod">
+                <span class="star">&#9733</span>
+                <p>Reviews (24)</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="fond">
+                <img src="img2.jpg" alt="fond">
+            </div>
+            <div class="infos-prod">
+                <p>Title goes here</p>
+                <span>$30.25</span>
+            </div>
+            <div class="descrip-prod">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit minima debitis asperiores cupiditate perspiciatis repellat.</p>
+            </div>
+            <div class="eval-prod">
+                <span class="star">&#9733</span>
+                <p>Reviews (21)</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="fond">
+                <img src="img3.jpg" alt="fond">
+            </div>
+            <div class="infos-prod">
+                <p>Title goes here</p>
+                <span>$2.45</span>
+            </div>
+            <div class="descrip-prod">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit minima debitis asperiores cupiditate perspiciatis repellat.</p>
+            </div>
+            <div class="eval-prod">
+                <span class="star">&#9733</span>
+                <p>Reviews (36)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

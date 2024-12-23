@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon parcour ...</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(to left, #000, #000c);
+            overflow: hidden;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 2vh;
+            gap: 20px;
+        }
+        .content .container{
+            background: url('fond-tmp.png');
+            height: 26vh;
+            width: 50vh;
+            transition: transform 0.5s;
+            cursor: pointer;
+            opacity: 90%;
+            transform: rotate(20deg);
+        }
+        .container::after{
+            content: '';
+            background: #000;
+        }
+        .container:hover{
+            transform: scale(1.1);
+            /* background: #000; */
+            opacity: 100%;
+            z-index: 999;
+        }
+        .container p{
+            background: #000;
+            font-size: 18px;
+            border-top-right-radius: 0.8em;
+            border-bottom-left-radius: 0.8em;
+            padding: 10px;
+            margin: 10vh;
+            transition: 1s;
+        }
+        .container p:hover{
+            transform: scale(1.1);
+            height: 100%;
+        }
+        .container p a{
+            position: relative;
+            color: #fff;
+            left: 1.5em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.5s;
+            z-index: 99999;
+        }
+        .container p a:hover{
+            color: #000;
+            text-decoration: underline;
+        }
+        .container p span{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            top: 40px;
+            left: 0;
+            padding: 4px;
+            height: 100%;
+            font-size: 10px;
+            transform: translateY(-40px);
+            transition: 1s;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+        .container p span:hover{
+            background: #5e5e5e42;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .content .container:nth-child(1) p:hover{background: url('1.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(2) p:hover{background: url('2.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(3) p:hover{background: url('3.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(4) p:hover{background: url('4.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(5) p:hover{background: url('5.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(6) p:hover{background: url('6.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(7) p:hover{background: url('7.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(8) p:hover{background: url('8.png') no-repeat;background-size: cover;}
+        .content .container:nth-child(9) p:hover{background: url('9.png') no-repeat;background-size: cover;}
+        
+        @media (max-width:480px) {
+            body{
+                overflow: scroll;
+            }
+            .content .container{
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <p>
+                <a target="_blank" href="1.Cercles-bois/">Pièce 1</a>
+                <span>Reproduire l'image du bon-homme de neige.</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="2.google-home/google-home.html">Pièce 2</a>
+                <span>Reproduire la page d'acceuil de google.</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="3.Piano/">Pièce 3</a>
+                <span>Reproduire le piano. PS: c'etait bien instructif.</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="4.Form-Enq/">Pièce 4</a>
+                <span>Répliquer le formulaire d'enquête ci-dessous avec la partie en fond bleu et vous assurant que vos champs sont alignés comme dans l’image (le texte aussi)</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="5.Page-Vente/page.html">Pièce 5</a>
+                <span>Créer la page d’un produit comme celle-ci, vous pourrez ajouter des éléments comme le prix, le vendeur et autres</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="6.Resutat google/page.html">Pièce 6</a>
+                <span>Répliquer la page de résultat de recherche de google</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="7.Form Arima Hotel/">Pièce 7</a>
+                <span>Reproduire la page d'acceuil de Hotel Arina : Formulaire d'inscription</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="8.Map-form/">Pièce 8</a>
+                <span>Repliquer le formulaire avec google map, je croit :|</span>
+            </p>
+        </div>
+        <div class="container">
+            <p>
+                <a target="_blank" href="9.Page-Articles/">Pièce 9</a>
+                <span>Reproduire la page de presentation d'article. PS: J'avait plus le fichier qui contenais les images a utiliser , je me suis debrouiller </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

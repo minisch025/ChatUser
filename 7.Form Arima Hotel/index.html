@@ -121,7 +121,7 @@
             <h2>Welcome to Hotel Arina</h2>
             <form action="">
                 <span>Sing up buddy</span>
-                <!-- Tout les champs sont obligatoire "required" -->
+                <!-- Tout les champs sont obligatoire "required" ou ".*\S.*" -->
                 <input type="text" placeholder="Name" pattern="^(?=.*[A-Z]).{10,}$" required>
                 <!-- Le nom commence par une majuscule et doit contenir au moins 10 caracteres -->
                 <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" required>
