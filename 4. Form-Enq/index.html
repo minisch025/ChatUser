@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: #aad7d2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* height: 100vh; */
+        }
+        h2, p{
+            text-align: center;
+            margin: 20px;
+        }
+        tr td:nth-child(1){
+            text-align: right;
+            padding: 0px 20px;
+        }
+        tr td:nth-child(2){
+            padding-bottom: 10px;
+        }
+        input, select{
+            font-size: 14px;
+        }
+        input[type="text"], input[type="email"], input[type="number"]{
+            padding: 8px 4px;
+            width: 50vh;
+        }
+        input[type="radio"], input[type="checkbox"]{
+            /* margin: 6px; */
+        }
+        select{
+            padding: 8px 2px;
+            width: 25vh;
+        }
+        table{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 130vh;
+        }
+        .contain{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #fafafa;
+            padding: 20px 20vh;
+            /* height: 100vh; */
+        }
+    </style>
+    <title>Formulaire d'enquete</title>
+</head>
+<body>
+    <h2>Survey Form</h2>
+    <div class="contain">
+        <p>Let us know how we can improve freeCodeCamp</p>
+        <form action="">
+            <table>
+                <tr>
+                    <td>* Name:</td>
+                    <td><input type="text" placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td>* Email:</td>
+                    <td><input type="email" placeholder="Enter your Email"></td>
+                </tr>
+                <tr>
+                    <td>* Age:</td>
+                    <td><input type="number" placeholder="Age"></td>
+                </tr>
+                <tr>
+                    <td>Which option best describes your current role?</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="student"><label for="student">Student</label></option>
+                            <option value="etudiant"><label for="etudiant">Etudiant</label></option>
+                            <option value="worket"><label for="worket">Worket</label></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>* How likely is that you would recommend <br> freeCodeCamp to a friend?</td>
+                    <td>
+                        <input type="radio" name="choise" id="Definitely"><label for="Definitely"> Definitely</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="radio" name="choise" id="Maybe"><label for="Maybe"> Maybe</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="radio" name="choise" id="Not"><label for="Not"> Not sure</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>What do you like most in FCC:</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">Select an option</option>
+                            <option value="all">All</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Things that should be improved in the future <br>(Check all that apply);</td>
+                    <td>
+                        <input type="checkbox" name="" id="Front-end"><label for="Front-end"> Front-end Projects</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="" id=" Back-end"><label for=" Back-end"> Back-end Projects</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="" id="Data"><label for="Data"> Data Visualization</label>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

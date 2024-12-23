@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat de la recherche : Arcane histoire 2024</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            transition: 0.5s;
+        }
+        .container .name{
+            position: relative;
+            margin: 15px;
+            left: 3em;
+            user-select: none;
+        }
+        .container .name span{
+            font-size: 50px;
+            font-weight: 1000;
+            margin: 0 0 0 -6px;
+        }
+        .container .name span{
+            color: var(--clr);
+        }
+        .container nav{
+            display: flex;
+            flex-direction: column;
+            background-color: #fafafa;
+        }
+        .container .nav-up{
+            display: flex;
+        }
+        .nav-up .search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25em;
+            margin-top: -0.4em;
+        }
+        .nav-up .search input{
+            position: absolute;
+            padding: 14px 20px;
+            font-size: 16px;
+            width: 50%;
+            box-shadow: 5px 6px 6px rgba(0, 0, 0, 0.1);
+            border: solid #0000000a 0.2em;
+            border-radius: 0.2em;
+            border: none;
+            z-index: 0;
+        }
+        .nav-up .btn-search{
+            position: relative;
+            cursor: pointer;
+            top: -0.8em;
+            left: 18.5em;
+            z-index: 1;
+        }
+        .nav-up .search .circle-btn-search{
+            left: 62%;
+            position: absolute;
+            padding: 0.5em;
+            border-radius: 50%;
+            border: 2px solid var(--clr);
+        }
+        .nav-up .search .bra-btn-search::after{
+            content: "";
+            position: absolute;
+            top: 0.8em;
+            left: 1em;
+            width: 3px;
+            height: 1em;
+            border-radius: 20vh;
+            background-color: var(--clr);
+            transform: rotate(-40deg);
+        }
+        .container .nav-down{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-down ul{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            left: -18vh;
+            list-style: none;
+            transition: 0.5s;
+            transform: translateX(-20px);
+        }
+        .nav-down ul li{
+            padding: 12px;
+        }
+        .nav-down ul li:nth-child(5){
+            position: relative;
+            margin-right: 10em;
+        }
+        .nav-down ul li a{
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            color: #bbbbbb;
+        }
+        .nav-down ul li a.active{
+            color: #4285f4;
+            padding: 8px 12px;
+            border-bottom: solid #4285f4 4px;
+        }
+        .nav-down ul li a:hover{
+            color: #4285f4;
+        }
+        .container .main{
+            height: 100vh;
+            padding: 5px 20px;
+            margin: 1em 15%;
+        }
+        .google-account{
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+            margin-left: 90vh;
+            z-index: 000;
+        }
+        .google-account img{
+            position: relative;
+            height: 25px;
+            width: 25px;
+            margin: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-up">
+                <div class="name">
+                    <span style="--clr:#4285f4;">G</span>
+                    <span style="--clr:#ea4335;">o</span>
+                    <span style="--clr:#fbbc05;">o</span>
+                    <span style="--clr:#4285f4;">g</span>
+                    <span style="--clr:#34a853;">l</span>
+                    <span style="--clr:#ea4335;">e</span>
+                </div>
+                <div class="search">
+                    <input type="text" value="Arcane histoire 2024">
+                    <div class="btn-search">
+                        <span class="circle-btn-search bra-btn-search" style="--clr:#4285f4;"></span>
+                    </div>
+                </div>
+                <div class="account">
+                    <div class="google-account">
+                        <img src="grip-vertical.svg" alt="">
+                        <img src="bell.svg" alt="">
+                        <img src="circle-user.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="nav-down">
+                <ul>
+                    <li><a href="#" class="active">Tout</a></li>
+                    <li><a href="#">Images</a></li>
+                    <li><a href="#">Informations</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Plus</a></li>
+                    <li><a href="#">Paramétres</a></li>
+                    <li><a href="#">Outils</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main">
+            <span>Plus de 4600,000,800 resultats (en 0.43 secondes)</span>
+        </div>
+    </div>
+</body>
+</html>

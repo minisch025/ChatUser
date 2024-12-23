@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: solid red 1px; */
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    transition: 0.5s;
+    cursor: pointer;
+}
+.content nav{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #0f0f0f;
+    color: #fff;
+    z-index: 0;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    transition: 0.5s;
+    transform: translateX(-20px);
+}
+nav ul li{
+    padding: 12px;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.5s;
+}
+nav ul li a.active{
+    color: #f7673b;
+    padding: 12px;
+}
+nav ul li a:hover{
+    color: #f7673b;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+.container h2{
+    margin: 3vh;
+}
+.container .article{
+    margin: 0 16vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.container .pic-artcle img{
+    border-radius: 10px;
+    width: 420px;
+}
+.container .pic-artcle img{
+    box-shadow: 10px 20px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.container .article .describ-artcle{
+    padding: 10vh;
+    margin: 5vh;
+    line-height: 20px;
+}
+.describ-artcle:hover{
+    background: #ececec;
+}
+.container .article .describ-artcle span{
+    color: #13b913;
+}
+.container .article .describ-artcle button{
+    border: none;
+    border-radius: 4vh;
+    font-size: 15px;
+    padding: 12px;
+    margin: 2vh;
+    transform: translateX(130%);
+}
+
+.ending{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+    margin-top: 2vh;
+    transform: translateY(66px);
+    background: #020349;
+    color: #fff;
+    font-size: 16px;
+}
+.ending button{
+    padding: 12px;
+    display: block;
+    margin: 10px;
+    border: none;
+    transform: translateX(70px);
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.ending button:hover{
+    background: #f7673b;
+    color: #000;
+}
+
+@media (max-width: 480px) {
+    .container .article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'inscrire | ARINA Hotel</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .content{
+            display: flex;
+            flex-direction: row;
+        }
+        .content .fasade{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url("adidas-1336x768.jpg") no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 50%;
+        }
+        .content .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            width: 50%;
+        }
+        .content .form h2{
+            font-size: 30px;
+            color: #0b55a0;
+        }
+        .content .form form{
+            display: flex;
+            flex-direction: column;
+            padding: 10vh 0;
+            gap: 10px;
+        }
+        .content .form form span{
+            color: #0b55a0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .content .form form input{
+            width: 25em;
+            height: 3em;
+            padding: 10px;
+            font-size: 16px;
+            border: solid 2px #cecece;
+        }
+        .content .form form input::placeholder{
+            color: #999999;
+        }
+        .content .form form .terms input[type="checkbox"]{
+            width: 1.5em;
+            cursor: pointer;
+        }
+        .content .form form .terms input:checked{
+            background: transparent;
+            outline: none;
+        }
+        .content .form form .terms label{
+            position: relative;
+            bottom: 15px;
+            color: #999999;
+            cursor: pointer;
+        }
+        .content .form form input[type="submit"]{
+            background: #0b55a0;
+            color: #fff;
+            border: none;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .content .form form input[type="submit"]:hover{
+            background: #1477da;
+        }
+
+        /* Un peu de responsive ;) */
+        @media (max-width: 480px) {
+            .content .fasade{
+                display: none;
+            }
+            .content .form{
+                width: 100%;
+            }
+        }
+
+        /* Appliquer les conditions sur le style */
+        /* Les champs correctement remplis doivent avoir une bordure "bleue" et ceux mals remplis, une bordure "bordeau" */
+        input{
+            outline: solid 2px #999999;
+        }
+        input:focus{
+            outline: solid 2px #1477da;
+            box-shadow: 10px 4px 10px 2px #999999;
+        }
+        input:valid{
+            outline: solid 2px #1477da;
+        }
+        input:invalid{
+            outline: solid 2px #cc3000 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="fasade"></div>
+        <div class="form">
+            <h2>Welcome to Hotel Arina</h2>
+            <form action="">
+                <span>Sing up buddy</span>
+                <!-- Tout les champs sont obligatoire "required" -->
+                <input type="text" placeholder="Name" pattern="^(?=.*[A-Z]).{10,}$" required>
+                <!-- Le nom commence par une majuscule et doit contenir au moins 10 caracteres -->
+                <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" required>
+                <!-- Le mot de passe (j'ai vraiment gallerer ici MetaIA ma aider :( , mais bon) doit contenir au moins une lettre majuscule, au moins une lettre minuscule, au moins un chiffre et contenir au moins 8 caractères -->
+                <input type="email" placeholder="Email" pattern="^[a-z0-9._%+-]+@webcodepath\.com$" required>
+                <!-- L’email doit se terminer par “@webcodepath.com” et ne doit contenir aucune majuscule -->
+                <input type="tel" placeholder="Phone" pattern="[0-9]*" required>
+                <!-- Le champ “phone” ne doit contenir que des chiffres -->
+                <input type="text" placeholder="Address" required>
+                <div class="terms">
+                    <!-- La checkbox doit être cochée d’office "checked" -->
+                    <input type="checkbox" id="support" checked required><label for="support"> I agree the terms & conditions</label>
+                </div>
+                <input type="submit" value="Send Request">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
