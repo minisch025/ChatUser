@@ -14,6 +14,11 @@ button{
     transition: 0.5s;
     cursor: pointer;
 }
+.content{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
 .content nav{
     position: fixed;
     width: 100%;
@@ -24,7 +29,7 @@ button{
     flex-direction: column;
     background: #0f0f0f;
     color: #fff;
-    z-index: 0;
+    z-index: 999;
 }
 nav ul{
     display: flex;
@@ -49,12 +54,14 @@ nav ul li a.active{
 nav ul li a:hover{
     color: #f7673b;
 }
+
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translateY(50px);
+    position: relative;
+    margin-top: -14vh;
     transition: 0.5s;
 }
 .container h2{
@@ -87,12 +94,11 @@ nav ul li a:hover{
     color: #13b913;
 }
 .container .article .describ-artcle button{
-    border: none;
-    border-radius: 4vh;
+    border: 1px solid #ccc;
+    border-radius: 1vh;
     font-size: 15px;
     padding: 12px;
     margin: 2vh;
-    transform: translateX(130%);
 }
 
 .ending{
@@ -100,12 +106,13 @@ nav ul li a:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px 0;
-    margin-top: 2vh;
-    transform: translateY(66px);
     background: #020349;
     color: #fff;
     font-size: 16px;
+    position: fixed;
+    height: 22vh;
+    width: 100%;
+    bottom: 0;
 }
 .ending button{
     padding: 12px;
@@ -123,10 +130,56 @@ nav ul li a:hover{
 }
 
 @media (max-width: 480px) {
+    .content{
+        overflow: hidden;
+    }
+    .content nav{
+        position: fixed;
+        width: 40%;
+        background: #000;
+        height: 100vh;
+        opacity: 10%;
+    }
+    .content nav:hover{
+        opacity: 100%;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -24em;
+        transition: 0.5s;
+    }
+    nav ul li{
+        position: relative;
+        left: 2.5em;
+        padding: 14px;
+        margin-left: 10px;
+    }
+    nav ul li a.active{
+        background: #f7673b;
+        padding: 1.4vh 8vh;
+        color: #ececec;
+    }
+    .container{
+        position: relative;
+        top: -8em;
+        left: -9em;
+        margin-top: 0;
+    }
+    .container .article .describ-artcle{
+        padding: 1vh;
+        margin: 5vh;
+        line-height: 20px;
+    }
     .container .article{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .ending{
+        left: 0;
+        z-index: 999;
     }
 }

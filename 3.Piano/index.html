@@ -10,112 +10,126 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
+            border: solid transparent 1px;
         }
         body{
             background: #67701d;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .content span:hover{
+            opacity: 75%;
+            cursor: pointer;
+        }
+        .content{
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0 20vh;
+            height: 40vh;
+            width: 90%;
+            top: 10em;
+            left: 10vh;
+            /* margin: 0 20vh; */
         }
         .touch{
-            width: 100vh;
-            height: 38vh;
+            width: 5em;
+            height: 15em;
             background-color: #fff;
             border: solid 2px #1d1e22;
             border-radius: 3px;
         }
+        .dieses{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            left: -38em;
+            top: -3.4em;
+        }
+        .diese-touchs{
+            position: absolute;
+            display: flex;
+        }
         .diese{
-            margin-right: 10px;
-            width: 6vh;
+            margin: 0 10px;
+            width: 2.5em;
             height: 20vh;
             background-color: #1d1e22;
             border-radius: 3px;
-            z-index: 9999;
+            z-index: 1;
         }
-        .diese-group2{
-            /* border: solid red 1px; */
-            position: absolute;
+        .diese-group{
             display: flex;
-            flex-direction: row;
-            margin-left: 12vh;
-            transform: translateY(-55px);
+            margin-right: 3em;
         }
-        .touch2{
-            display: flex;
-            margin-right: 45vh;
+        .diese-group:last-child{
+            margin: 0;
         }
-        .diese-group3{
-            /* border: solid red 1px; */
-            position: absolute;
-            display: flex;
-            flex-direction: row;
-            margin-left: 64vh;
-            transform: translateY(-55px);
+
+        @media (max-width:480px) {
+            .content{
+                transform: rotate(90deg);
+            }
         }
-        .touch3{
-            display: flex;
-            margin-right: 37vh;
-        }
-        
     </style>
 </head>
 <body>
-    <!-- J'sais pas vraiment si c'est necessaire un contener ici -->
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <div class="touch"></div>
-    <!-- ...bref je continue -->
-
-    <div class="diese-group2">
-        <div class="touch2">
-            <div class="touch-diese2 diese"></div>
-            <div class="touch-diese2 diese"></div>
-        </div>
-        <div class="touch2">
-            <div class="touch-diese2 diese"></div>
-            <div class="touch-diese2 diese"></div>
-        </div>
-        <div class="touch2">
-            <div class="touch-diese2 diese"></div>
-            <div class="touch-diese2 diese"></div>
-        </div>
-    </div>
+    <div class="content">
+        <!-- J'sais pas vraiment si c'est necessaire un contener ici -->
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <span class="touch"></span>
+        <!-- ...bref je continue -->
     
-    <div class="diese-group3">
-        <div class="touch3">
-            <div class="touch-diese3 diese"></div>
-            <div class="touch-diese3 diese"></div>
-            <div class="touch-diese3 diese"></div>
-        </div>
-        <div class="touch3">
-            <div class="touch-diese3 diese"></div>
-            <div class="touch-diese3 diese"></div>
-            <div class="touch-diese3 diese"></div>
-        </div>
-        <div class="touch3">
-            <div class="touch-diese3 diese"></div>
-            <div class="touch-diese3 diese"></div>
-            <div class="touch-diese3 diese"></div>
+        <div class="dieses">
+            <div class="diese-touchs">
+                <div class="diese-group">
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                </div>
+                <div class="diese-group">
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                </div>
+                <div class="diese-group">
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                </div>
+                <div class="diese-group">
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                </div>
+                <div class="diese-group">
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                </div>
+                <div class="diese-group">
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                    <span class="diese"></span>
+                </div>
+            </div>
         </div>
     </div>
 </body>
